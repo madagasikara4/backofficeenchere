@@ -36,7 +36,6 @@
                     </div>
                     <div class="col-md-4 text-center animate-box">
                         <div class="product">
-                            
                             <div class="desc">
                                 <h3><%= vproduit[i].getNomproduit() %></h3>
                                 <span class="price">Durée : <%= vproduit[i].getDuree() %></span></br>
