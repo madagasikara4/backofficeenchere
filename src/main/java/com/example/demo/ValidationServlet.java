@@ -1,19 +1,18 @@
 package com.example.demo;
 
-import java.io.*;
-
 import com.example.models.AppelWS;
 import com.example.models.Data;
 import com.example.models.Rechargement;
 import com.example.models.VRechargement;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
+import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/validationRecharge")
-public class ValidationRecharge extends HttpServlet {
+import java.io.IOException;
+
+@WebServlet(name = "ValidationServlet", value = "/ValidationServlet")
+public class ValidationServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id=Integer.parseInt(request.getParameter("id"));
@@ -41,7 +40,7 @@ public class ValidationRecharge extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String json = AppelWS.getMethod("/recharge/validation/0");
-            Object[] obj=Data.arraytoObj(VRechargement.class,json);
+            Object[] obj= Data.arraytoObj(VRechargement.class,json);
             VRechargement[] rec=new VRechargement[obj.length];
             for (int i = 0; i < obj.length; i++) {
                 rec[i]=(VRechargement) obj[i];

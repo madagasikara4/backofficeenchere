@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
                 dispat.forward(request,response);
                 return;
             }
-            response.sendRedirect("validationRecharge");
+            response.sendRedirect("CategorieList");
         }
         catch (Exception e){
             e.printStackTrace();
