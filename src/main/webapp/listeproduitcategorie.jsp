@@ -36,11 +36,7 @@
                     </div>
                     <div class="col-md-4 text-center animate-box">
                         <div class="product">
-                            <div class="product-grid" style="background-image:url(images/product-2.jpg);">
-                                <div class="inner">
-                                    <p><%= vproduit[i].getDescri() %></p>
-                                </div>
-                            </div>
+                            
                             <div class="desc">
                                 <h3><%= vproduit[i].getNomproduit() %></h3>
                                 <span class="price">Durée : <%= vproduit[i].getDuree() %></span></br>
